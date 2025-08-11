@@ -35,6 +35,8 @@
 #'                     filtros = c(), filtros_esp = c())
 #'
 #'
+#' @export
+#'
 search_comex_mun <- function(ano_inicial = substr(Sys.Date(), 1,4 ) , ano_final = substr(Sys.Date(), 1,4 ),
                                      mes_inicial = 1, mes_final = 12, detalha_mes = FALSE,
                                      tipo_op ='exp', tipo_ord='val',filtros = c(), filtros_esp = c(),

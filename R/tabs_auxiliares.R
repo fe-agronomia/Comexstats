@@ -44,6 +44,9 @@ NULL
 #'  pesquisar_ncm('010')
 #'
 #' @rdname Tabelas_Auxiliares
+#'
+#' @export
+#'
 pesquisar_ncm <- function(pattern='') {
 
   #Ajusta parâmetros da consulta
@@ -89,6 +92,9 @@ pesquisar_ncm <- function(pattern='') {
 #'  pesquisar_sh6('aço')
 #'
 #' @rdname Tabelas_Auxiliares
+#'
+#' @export
+#'
 pesquisar_sh6 <- function(pattern='') {
 
   #Ajusta parâmetros da consulta
