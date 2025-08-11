@@ -57,7 +57,7 @@ Comex Stat e retorna um data frame com os resultados.
 }
 \examples{
 \dontrun{
-pesquisar_comex_stat(
+search_comex(
   ano_inicial = 2022, ano_final = 2022,
   mes_inicial = 1, mes_final = 12,
   detalha_mes = TRUE,
