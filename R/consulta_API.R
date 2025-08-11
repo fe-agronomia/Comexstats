@@ -34,7 +34,7 @@
 #' }
 #' @export
 #'
-search_comex_stat <- function(ano_inicial = format(Sys.Date(), "%Y"),
+search_comex <- function(ano_inicial = format(Sys.Date(), "%Y"),
                                  ano_final = format(Sys.Date(), "%Y"),
                                  mes_inicial = 1, mes_final = 12,
                                  detalha_mes = FALSE,
