@@ -34,7 +34,7 @@
 #' }
 #' @export
 #'
-pesquisar_comex_stat <- function(ano_inicial = format(Sys.Date(), "%Y"),
+search_comex_stat <- function(ano_inicial = format(Sys.Date(), "%Y"),
                                  ano_final = format(Sys.Date(), "%Y"),
                                  mes_inicial = 1, mes_final = 12,
                                  detalha_mes = FALSE,
@@ -47,6 +47,10 @@ pesquisar_comex_stat <- function(ano_inicial = format(Sys.Date(), "%Y"),
   # Garantir pacotes
   if (!requireNamespace("httr", quietly = TRUE)) stop("Pacote 'httr' é necessário.")
   if (!requireNamespace("jsonlite", quietly = TRUE)) stop("Pacote 'jsonlite' é necessário.")
+
+  # Conversão tipo de operação e ordenação (se necessário)
+  tipo_op_val <- ifelse(tipo_op == "exp", 1, 2)
+  tipo_ord_val <- ifelse(tipo_ord == "val", 1, 2)
 
   # Preparar parâmetros
   mes_inicial <- sprintf("%02d", mes_inicial)
@@ -80,7 +84,14 @@ pesquisar_comex_stat <- function(ano_inicial = format(Sys.Date(), "%Y"),
 
   # Chamada à API
   url <- "https://api-comexstat.mdic.gov.br/general?language=pt"
-  resp <- httr::POST(url, body = corpo, encode = "json")
+
+
+  resp <- httr::POST(
+    url,
+    body = corpo,
+    encode = "json",
+    config = httr::config(ssl_verifypeer = 0L)
+  )
 
   if (resp$status_code != 200) {
     stop("Erro na API: ", resp$status_code, " - ", httr::content(resp, "text"))
