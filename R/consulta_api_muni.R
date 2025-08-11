@@ -26,11 +26,11 @@
 #' @description
 #' Pesquisa estatísticas de importação e de exportação disponibilizadas pelo sistema Comex Stat e gera como resultado um dataframe.
 #' @examples
-#' pesquisar_comex_stat_mun(ano_inicial = 2018, ano_final = 2018, mes_inicial = 1, mes_final = 12,
+#' search_comex_mun(ano_inicial = 2018, ano_final = 2018, mes_inicial = 1, mes_final = 12,
 #'                      tipo_op = 'exp', tipo_ord = 'val', filtros = c('pais'), detalhamentos = c('pais','sh4'),
 #'                      filtros_esp = list(c(160,249)))
 #'
-#' pesquisar_comex_stat_mun(ano_inicial = 2018, ano_final = 2018, mes_inicial = 1, mes_final = 12,
+#' search_comex_mun(ano_inicial = 2018, ano_final = 2018, mes_inicial = 1, mes_final = 12,
 #'                     detalha_mes = FALSE, tipo_op = 'exp', tipo_ord = 'val', detalhamentos = c('pais','mun'),
 #'                     filtros = c(), filtros_esp = c())
 #'
